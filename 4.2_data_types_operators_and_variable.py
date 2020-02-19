@@ -118,15 +118,17 @@ print(f"Total payment: ${total_payment}")
 
     # A student can be enrolled to a class only if the class is not full and the class
     # schedule does not conflict with her current schedule.
-is_class_full = False
-is_schedule_conflict = False
-print(f"Able to enroll:", not is_class_full and not is_schedule_conflict)
+class_has_room = True
+schedule_works = True
+can_enroll = class_has_room and schedule_works
+print(f"Able to enroll:", can_enroll)
 
     # A product offer can be applied only if people buys more than 2 items, and the offer
     # has not expired. Premium members do not need to buy a specific amount of products.
 num_items_bought = 3
 is_premium_member = False
-apply_product_offer = (num_items_bought > 2) or is_premium_member
+offer_valid = True
+apply_product_offer = offer_valid and (num_items_bought > 2 or is_premium_member)
 print("Apply product offer:", apply_product_offer)
 
 # Use the following code to follow the instructions below:
