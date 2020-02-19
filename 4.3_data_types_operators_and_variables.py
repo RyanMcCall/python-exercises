@@ -118,5 +118,31 @@ print(f"Total payment: ${total_payment}")
 
     # A student can be enrolled to a class only if the class is not full and the class
     # schedule does not conflict with her current schedule.
-class_full = False
-schedule_conflict = False
+is_class_full = False
+is_schedule_conflict = False
+print(f"Able to enroll:", not is_class_full and not is_schedule_conflict)
+
+    # A product offer can be applied only if people buys more than 2 items, and the offer
+    # has not expired. Premium members do not need to buy a specific amount of products.
+num_items_bought = 3
+is_premium_member = False
+apply_product_offer = (num_items_bought > 2) or is_premium_member
+print("Apply product offer:", apply_product_offer)
+
+# Use the following code to follow the instructions below:
+username = 'codeup'
+password = 'notastrongpassword'
+
+# Create a variable that holds a boolean value for each of the following conditions:
+    # the password must be at least 5 characters
+pass_length_correct = len(password) >= 5
+print("Password length correct:", pass_length_correct)
+    # the username must be no more than 20 characters
+username_length_correct = len(username) <= 20
+print("Username length correct:", username_length_correct)
+    # the password must not be the same as the username
+pass_and_username_different = username != password
+print("Password and username are different:", pass_and_username_different)
+    # bonus neither the username or password can start or end with whitespace
+pass_and_username_lack_whitespace = (username[0] != " " and username[-1] != " ") and (password[0] != " " and password[-1] != " ")
+print("Password and username don't start or end with whitespace", pass_and_username_lack_whitespace)
