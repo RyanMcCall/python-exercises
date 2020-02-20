@@ -211,15 +211,25 @@ while True:
 while True:
     user_grade_request = int(input("Enter a numerical grade: "))
 
-    if user_grade_request < 88:
-        print("A")
-    elif user_grade_request < 80:
+    if user_grade_request > 88:
+        if user_grade_request > 96:
+            print("A+")
+        elif user_grade_request > 91:
+            print("A")
+        else:
+            print("A-")
+    elif user_grade_request > 80:
         print("B")
-    elif user_grade_request < 67
+    elif user_grade_request > 67:
+        print("C")
+    elif user_grade_request > 60:
+        print("D")
+    elif user_grade_request > 0:
+        print("F")
 
     user_continue = input("Do you want to continue? (y/n)")
 
     if user_continue.lower().strip() == "y":
-        break
-    else:
         continue
+    else:
+        break
