@@ -219,13 +219,55 @@ while True:
         else:
             print("A-")
     elif user_grade_request > 80:
-        print("B")
+        if user_grade_request > 85:
+            print("B+")
+        elif user_grade_request > 82:
+            print("B")
+        else:
+            print("B-")
     elif user_grade_request > 67:
-        print("C")
+        if user_grade_request > 76:
+            print("C+")
+        elif user_grade_request > 71:
+            print("C")
+        else:
+            print("C-")
     elif user_grade_request > 60:
-        print("D")
+        if user_grade_request > 65:
+            print("D+")
+        elif user_grade_request > 62:
+            print("D")
+        else:
+            print("D-")
     elif user_grade_request > 0:
         print("F")
+
+    user_continue = input("Do you want to continue? (y/n)")
+
+    if user_continue.lower().strip() == "y":
+        continue
+    else:
+        break
+
+# Create a list of dictionaries where each dictionary represents a book that you have read.
+# Each dictionary in the list should have the keys title, author, and genre. Loop through 
+# the list and print out information about each book.
+
+books = [{"title": "The Lion, the Witch, and the Wardrobe", "author": "C.S. Lewis", "genre": "Fantasy"},
+{"title": "Eye of the World", "author": "Robert Jordan", "genre": "Fantasy"},
+{"title": "The Giver", "author": "Lois Lowry", "genre": "Science Fiction"}]
+
+print("Currently in library:\n")
+
+for book in books:
+    print(book["title"], "by", book["author"], ", a", book["genre"], "book")
+
+while True:
+    user_genre_request = input("What genre would you like? (Fantasy or Science Fiction)")
+
+    for book in books:
+        if book["genre"] == user_genre_request:
+            print(book["title"], "by", book["author"])
 
     user_continue = input("Do you want to continue? (y/n)")
 
