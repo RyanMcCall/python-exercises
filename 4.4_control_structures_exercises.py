@@ -1,15 +1,15 @@
 # a. prompt the user for a day of the week, print out whether the day is Monday or not
 user_day_of_week = input("Enter the day of the week: ")
 
-if user_day_of_week in ("Monday", "monday", "Mon."):
+if user_day_of_week in ["Monday", "monday", "Mon."]:
     print("That is Monday")
 else:
     print("That is not Monday")
 
 # prompt the user for a day of the week, print out whether the day is a weekday or a weekend
-if user_day_of_week.lower().strip() in ("monday", "mon", "tuesday", "tues", "wednesday", "wed", "thursday", "thurs", "friday", "fri"):
+if user_day_of_week.lower().strip() in ["monday", "mon", "tuesday", "tues", "wednesday", "wed", "thursday", "thurs", "friday", "fri"]:
     print("and it is a weekday")
-elif user_day_of_week.lower().strip() in ("saturday", "sat", "sunday", "sun"):
+elif user_day_of_week.lower().strip() in ["saturday", "sat", "sunday", "sun"]:
     print("and it is a weekend")
 
 # create variables and make up values for
@@ -34,26 +34,26 @@ print("Total Paycheck:", total_paycheck)
 # Create a while loop that runs so long as i is less than or equal to 15
 # Each loop iteration, output the current value of i, then increment i by one.
 i = 5
-while i < 16:
+while i <= 15:
     print(i)
     i += 1
 
 # Create a while loop that will count by 2's starting with 0 and ending at 100. Follow each
 # number with a new line.
 i = 0
-while i < 101:
+while i <= 100:
     print(i, "\n")
     i += 2
 
 # Alter your loop to count backwards by 5's from 100 to -10.
 i = 100
-while i > -11:
+while i >= -10:
     print(i)
     i -= 5
 
 # Create a while loop that starts at 2, and displays the number squared on each line while the number is less than 1,000,000. Output should equal:
 i = 2
-while i < 1000000:
+while i < 1_000_000:
     print(i)
     i **= 2
 
