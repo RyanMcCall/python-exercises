@@ -159,3 +159,30 @@ def cumsum(num_list):
 print(cumsum([1, 2, 3]))
 print(cumsum([1, 1, 1]))
 print(cumsum([1, 2, 3, 4]))
+
+# Create a function named twelveto24. It should accept a string in the format 10:45am or 
+# 4:30pm and return a string that is the representation of the time in a 24-hour format. 
+# Bonus write a function that does the opposite.
+def twelveto24(time):
+    separate_hour = time.split(":")
+    separate_minute = separate_hour[1][0:2]
+
+    if "am" in separate_hour[1]:
+        if len(separate_hour[0]) == 1:
+            return "0" + separate_hour[0] + ":" + separate_minute
+        elif separate_hour[0] == "12":
+            return "00" + ":" + separate_minute
+        else:
+            return separate_hour[0] + ":" + separate_minute
+    else:
+        if separate_hour[0] == "12":
+            return separate_hour[0] + ":" + separate_minute
+        else:
+            return str(int(separate_hour[0]) + 12) + ":" + separate_minute
+
+print(twelveto24("9:45am"))
+print(twelveto24("10:25am"))
+print(twelveto24("12:01am"))
+print(twelveto24("12:26pm"))
+print(twelveto24("4:36pm"))
+print(twelveto24("10:56pm"))
