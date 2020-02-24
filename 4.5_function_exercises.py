@@ -3,12 +3,7 @@
 
 def is_two(x):
     '''takes a string or int and returns whether it is two'''
-    if x == 2:
-        return True
-    elif x == "2":
-        return True
-    else:
-        return False
+    return x == 2 or x == "2"
 
 print("Test for is_two")
 print(is_two(2))
@@ -21,40 +16,25 @@ print()
 # False otherwise.
 def is_vowel(letter):
     '''takes a single character string and returns True if it is a vowel'''
-    if type(letter) != str:
-        return False
-    elif len(letter) > 1 or len(letter) < 1:
-        return False
-    elif letter.lower() in ["a", "e", "i", "o", "u"]:
-        return True
-    else:
-        return False
+    return (letter.lower() in 'aeiou') and len(letter) == 1
 
 print("Test for is_vowel")
 print(is_vowel("a"))
 print(is_vowel("b"))
 print(is_vowel(""))
 print(is_vowel("ab"))
-print(is_vowel(3))
 
 # Define a function named is_consonant. It should return True if the passed string is a 
 # consonant, False otherwise. Use your is_vowel function to accomplish this.
 def is_consonant(letter):
-    if type(letter) != str:
-        return False
-    elif len(letter) > 1 or len(letter) < 1:
-        return False
-    elif is_vowel(letter):
-        return False
-    else:
-        return True
+    letters = "abcdefghijklmnopqrstuvwxyz"
+    return len(letter) == 1 and letter.isalpha and not is_vowel(letter)
 
 print("Test for is_consenant")
 print(is_consonant("a"))
 print(is_consonant("b"))
 print(is_consonant(""))
 print(is_consonant("ab"))
-print(is_consonant(3))
 
 # Define a function that accepts a string that is a word. The function should capitalize 
 # the first letter of the word if the word starts with a consonant.
@@ -112,7 +92,7 @@ def remove_vowels(string):
     string_without_vowels = []
 
     for character in string:
-        if character.lower() not in 'aeiou':
+        if not is_vowel(character):
             string_without_vowels.append(character)
 
     return ''.join(string_without_vowels)
@@ -187,6 +167,15 @@ print(twelveto24("12:26pm"))
 print(twelveto24("4:36pm"))
 print(twelveto24("10:56pm"))
 
+def twentyfourto12(time):
+    time = time.split(":")
+    hour = time[0]
+    minutes = time[1]
+
+    if hour < 13:
+        return
+
+
 # Create a function named col_index. It should accept a spreadsheet column name, and 
 # return the index number of the column.
 def col_index(column_name):
@@ -199,13 +188,6 @@ def col_index(column_name):
         position += 1
     
     return total
-    
-    # if len(column_name) == 1:
-    #     return ord(column_name) - 96
-    # else:
-    #     first_letter_value = ord(column_name[0]) - 96
-    #     second_letter_value = ord(column_name[1]) - 96
-    #     return (first_letter_value * 26) + (second_letter_value)
 
 print(col_index("A"))
 print(col_index("AA"))
