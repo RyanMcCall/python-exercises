@@ -186,3 +186,29 @@ print(twelveto24("12:01am"))
 print(twelveto24("12:26pm"))
 print(twelveto24("4:36pm"))
 print(twelveto24("10:56pm"))
+
+# Create a function named col_index. It should accept a spreadsheet column name, and 
+# return the index number of the column.
+def col_index(column_name):
+    column_name = column_name.lower()
+    
+    total = 0
+    position = 0
+    for char in reversed(column_name):
+        total += (ord(char) - 96) * (26 ** position)
+        position += 1
+    
+    return total
+    
+    # if len(column_name) == 1:
+    #     return ord(column_name) - 96
+    # else:
+    #     first_letter_value = ord(column_name[0]) - 96
+    #     second_letter_value = ord(column_name[1]) - 96
+    #     return (first_letter_value * 26) + (second_letter_value)
+
+print(col_index("A"))
+print(col_index("AA"))
+print(col_index("ZZ"))
+print(col_index("AAA"))
+print(col_index("XFD"))
