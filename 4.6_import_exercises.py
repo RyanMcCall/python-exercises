@@ -107,3 +107,10 @@ print("The least common favorite fruit is", least_common_fav_fruit)
 
 # Total number of unread messages for all users
 
+unread_messages = 0
+for profile in profiles:
+    profile_greeting = profile["greeting"]
+    separate_greeting = profile_greeting.split(" ")
+    num_unread_message = [word for word in separate_greeting if word.isdigit()][0]
+    unread_messages += int(num_unread_message)
+print("The total number of unread messages for all users is:", unread_messages)
