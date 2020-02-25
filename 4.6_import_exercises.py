@@ -114,3 +114,9 @@ for profile in profiles:
     num_unread_message = [word for word in separate_greeting if word.isdigit()][0]
     unread_messages += int(num_unread_message)
 print("The total number of unread messages for all users is:", unread_messages)
+
+# Using regexp to solve
+import re
+re_unread_messages = [int(re.sub('[^0-9]+', '', profile["greeting"])) for profile in profiles]
+total_unread_messages = sum(re_unread_messages)
+print("The total number of unread messages for all users is:", total_unread_messages)
