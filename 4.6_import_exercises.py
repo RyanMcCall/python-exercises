@@ -32,6 +32,10 @@ product_list = []
 for product in itertools.product("ABC", "123"):
     product_list.append(product)
 
+num_product_list = len(product_list)
+
+faster_num_product_list = len(list(itertools.product("ABC", "123")))
+
 print(len(product_list))
 
 print()
@@ -41,6 +45,8 @@ combination_list = []
 
 for combination in itertools.combinations_with_replacement("abcd", 2):
     combination_list.append(combination)
+
+faster_num_combination_list = len(list(itertools.combinations_with_replacement("abcd", 2)))
 
 print("Number of different ways can you combine two of the letters from 'abcd':", len(combination_list))
 
@@ -72,7 +78,7 @@ print("Grand total of balances for all users: ${:,}".format(total_balances))
 
 # Average balance per user
 avg_balance = round(total_balances / len(user_balances), 2)
-print("Average balance per user: ${:,}".format(avg_balance))
+print("Average balance per user: ${:,.2f}".format(avg_balance))
 
 # User with the lowest balance
 lowest_balance = min(user_balances)
@@ -84,6 +90,9 @@ for profile in profiles:
 
 print("User with the lowest balance:", user_with_lowest_balance)
 
+    # Better solution
+#min(profiles, key=get_profile_balance)
+
 # User with the highest balance
 highest_balance = max(user_balances)
 user_with_highest_balance = ""
@@ -93,6 +102,9 @@ for profile in profiles:
         user_with_highest_balance = profile["name"]
 
 print("User with the highest balance:", user_with_highest_balance)
+
+    # Better solution
+#max(profiles, key=get_profile_balance)
 
 # Most common favorite fruit
 from collections import Counter
