@@ -82,20 +82,28 @@ for profile in profiles:
     if balance == lowest_balance:
         user_with_lowest_balance = profile["name"]
 
-print(user_with_lowest_balance)
+print("User with the lowest balance:", user_with_lowest_balance)
 
 # User with the highest balance
 highest_balance = max(user_balances)
 user_with_highest_balance = ""
 for profile in profiles:
     balance = float(profile["balance"].replace("$", "").replace(",", ""))
-    if balance == lowest
+    if balance == highest_balance:
+        user_with_highest_balance = profile["name"]
+
+print("User with the highest balance:", user_with_highest_balance)
 
 # Most common favorite fruit
+from collections import Counter
 
+fruit_counts = Counter(profile["favoriteFruit"] for profile in profiles)
+most_common_fav_fruit = fruit_counts.most_common(1)[0][0]
+print("The most common favorite fruit is", most_common_fav_fruit)
 
 # Least most common favorite fruit
-
+least_common_fav_fruit = fruit_counts.most_common()[-1][0]
+print("The least common favorite fruit is", least_common_fav_fruit)
 
 # Total number of unread messages for all users
 
