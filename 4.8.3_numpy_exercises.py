@@ -177,26 +177,51 @@ c = [
     [7, 8, 9]
 ]
 
-c_array = np.array(c)
+c = np.array(c)
 # HINT, you'll first need to make sure that the "c" variable is a numpy array prior to 
 # using numpy array methods.
 # Exercise 1 - Find the min, max, sum, and product of c.
+min_c = c.min()
+print(min_c)
+
+max_c = c.max()
+print(max_c)
+
+sum_c = c.sum()
+print(sum_c)
+
+product_c = c.prod()
+print(product_c)
 
 # Exercise 2 - Determine the standard deviation of c.
+std_c = c.std()
+print(std_c)
 
 # Exercise 3 - Determine the variance of c.
+var_c = c.var()
+print(var_c)
 
 # Exercise 4 - Print out the shape of the array c
+print(np.shape(c))
 
 # Exercise 5 - Transpose c and print out transposed result.
+trans_c = c.transpose()
+print(trans_c)
 
 # Exercise 6 - Get the dot product of the array c with c. 
+dot_prod_c = c.dot(c)
+print(dot_prod_c)
 
 # Exercise 7 - Write the code necessary to sum up the result of c times c transposed. 
 # Answer should be 261
-
+sum_of_c_times_trans_c = (c * trans_c).sum()
+print(f"c: {c} trans_c: {trans_c}")
+print(c * trans_c)
+print(sum_of_c_times_trans_c)
 # Exercise 8 - Write the code necessary to determine the product of c times c transposed. 
 # Answer should be 131681894400.
+prod_of_c_times_trans_c = (c * trans_c).prod()
+print(prod_of_c_times_trans_c)
 
 
 ## Setup 4
@@ -206,22 +231,40 @@ d = [
     [60, 45, -45, 90, -45, 180]
 ]
 
+d = np.array(d)
 # Exercise 1 - Find the sine of all the numbers in d
+sine_d = np.sin(d)
+print(sine_d)
 
 # Exercise 2 - Find the cosine of all the numbers in d
+cos_d = np.cos(d)
+print(cos_d)
 
 # Exercise 3 - Find the tangent of all the numbers in d
+tan_d = np.tan(d)
+print(tan_d)
 
 # Exercise 4 - Find all the negative numbers in d
+all_negs_d = d[d < 0]
+print(all_negs_d)
 
 # Exercise 5 - Find all the positive numbers in d
+all_pos_d = d[d > 0]
+print(all_pos_d)
 
 # Exercise 6 - Return an array of only the unique numbers in d.
+unique_val_d = np.unique(d)
+print(unique_val_d)
 
 # Exercise 7 - Determine how many unique numbers there are in d.
+num_unique_d = unique_val_d.size
+print(num_unique_d)
 
 # Exercise 8 - Print out the shape of d.
+print(d.shape)
 
 # Exercise 9 - Transpose and then print out the shape of d.
-
+print(d.T.shape)
 # Exercise 10 - Reshape d into an array of 9 x 2
+d_9_x_2 = d.reshape((9,2))
+print(d_9_x_2)
